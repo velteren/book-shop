@@ -276,6 +276,7 @@ h1 {
   inset: 0;
   background-color: rgba(0,0,0, 0.7);
   cursor: pointer;
+  z-index: 100;
 }
 .modal__main {
   position: relative;
