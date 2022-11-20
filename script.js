@@ -1,7 +1,8 @@
 async function render() {
   const books = document.querySelector('.books'),
         booksData = await (await fetch('/assets/json/books.json')).json(),
-        cartTotal = 0;
+        totalSpan = document.querySelector('.total__span');
+  let cartTotal = 0;
 
   const modalController = ({modal, btnOpen, btnClose}) => {
     const buttonShow = document.querySelectorAll(btnOpen);
@@ -61,6 +62,9 @@ async function render() {
         let target = event.target;
         let toDelete = Number.parseInt((target.closest('.cart__card').classList)[1]);
         cartSet.delete(toDelete);
+        let priceToReduce = Number.parseInt(target.previousElementSibling.lastElementChild.lastElementChild.innerHTML);
+        cartTotal -= priceToReduce;
+        totalSpan.innerHTML = cartTotal;
         target.closest('.cart__card').remove();
         cartCounter.innerHTML--;
       }
@@ -168,6 +172,8 @@ async function render() {
       `;
       item.classList.add(`${tmp}cart__card`);
       cart.append(item);
+      cartTotal += element.price;
+      totalSpan.innerHTML = cartTotal;
     }
   }
 
