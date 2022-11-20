@@ -152,7 +152,7 @@ h1 {
   position: relative;
   bottom: 6px;
   right: 4px;
-  background-image: url('/assets/icons/search.png');
+  background-image: url('assets/icons/search.png');
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -186,6 +186,30 @@ h1 {
   margin-left: 30px;
   padding-left: 15px;
   padding-right: 15px;
+  transition: 0.5s;
+  position: relative;
+}
+
+.cart__counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  color: #FFFFFF;
+  position: absolute;
+  border-radius: 100%;
+  background-color: #1ABC9C;
+  filter: contrast(200%);
+  width: 20px;
+  height: 20px;
+  top: 23px;
+  left: 33px;
+}
+
+.cart:hover {
+  filter: contrast(200%);
+  cursor: pointer;
+  transform: scale(1.1);
 }
 .cart__pic {
   display: flex;
@@ -212,6 +236,15 @@ h1 {
   align-items: center;
 }
 
+.cart__card {
+  display: flex;
+  width: 580px;
+  border: 2px solid #1ABC9C;
+  height: 200px;
+  border-radius: 10px;
+  position: relative;
+}
+
 .books__img {
   display: block;
   height: 397px;
@@ -220,7 +253,21 @@ h1 {
   box-shadow: 9px 9px 20px 2px rgba(34, 60, 80, 0.16);
   margin-left: 30px;
   transition: 0.5s;
+  cursor: grab;
 }
+.grabbing {
+  cursor: grabbing;
+}
+
+.cart__card_img {
+  display: block;
+  height: 197px;
+  border-radius: 10px;
+  border: 3px solid #1ABC9C;
+  box-shadow: 9px 9px 20px 2px rgba(34, 60, 80, 0.16);
+  transition: 0.5s;
+}
+
 .books__img:hover {
   transform: scale(1.01);
 }
@@ -288,10 +335,6 @@ h1 {
   cursor: default;
 }
 
-.modal__title {
-
-}
-
 .modal__close {
   background-color: transparent;
   border: none;
@@ -305,6 +348,43 @@ h1 {
 
 .modal__close:hover {
   color: red;
+}
+
+.cart-modal__main {
+  position: relative;
+  background-color: azure;
+  margin: auto;
+  width: 1300px;
+  height: 90vh;
+  padding: 30px;
+  border-radius: 30px;
+  overflow-y: auto;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  cursor: default;
+}
+
+.cart__card_close {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 30px;
+  position: absolute;
+  left: 535px;
+  top: 10px;
+  transition: color 0.4s;
+}
+
+.cart__card_close:hover {
+  color: red;
+}
+
+.total {
+  position: absolute;
+  bottom: 30px;
+  right: 80px;
 }
 
 .subscribe {
