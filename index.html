@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/normalize.css">
+  <link rel="stylesheet" href="assets/css/normalize.css">
   <link rel="stylesheet" href="style.css">
   <title>Books shop</title>
 </head>
@@ -19,12 +19,12 @@
       <div class="header__upper_container container">
         <div class="logo">
           <a href="index.html">
-            <img src="/assets/icons/book-bookmark-icon_34486.png" alt="logo" class="logo__pic">
-            <h1 class="header__h1">B <img src="/assets/icons/o.png" alt=""><img src="/assets/icons/o.png" alt="">KAH<img src="/assets/icons/o.png" alt="">LIC</h1>
+            <img src="assets/icons/book-bookmark-icon_34486.png" alt="logo" class="logo__pic">
+            <h1 class="header__h1">B <img src="assets/icons/o.png" alt=""><img src="assets/icons/o.png" alt="">KAH<img src="assets/icons/o.png" alt="">LIC</h1>
           </a>
         </div>
         <button class="login">
-          <img src="/assets/icons/user.png" alt="">
+          <img src="assets/icons/user.png" alt="">
           <h3 class="login__h3">Sign in / Sign up</h3>
         </button>
       </div>
@@ -53,13 +53,21 @@
         </div>
         <div class="header__bottom_right">
           <div class="wishlist">
-            <img src="/assets/icons/heart.png" alt="" class="whishlist__pic">
+            <img src="assets/icons/heart.png" alt="" class="whishlist__pic">
             <span>Whishlist</span>
           </div>
           <div class="cart">
-            <img src="/assets/icons/cart.png" alt="" class="cart__pic">
+            <img src="assets/icons/cart.png" alt="" class="cart__pic">
+            <div class="cart__counter"><span class="counter__span">0</span></div>
           </div>
         </div>
+      </div>
+    </div>
+
+    <div class="cart-modal modal">
+      <div class="cart-modal__main">
+        <button class="modal__close">&#10006;</button>
+        <div class="total">Total: 0</div>
       </div>
     </div>
   </header>
@@ -70,42 +78,6 @@
         Our Best Sellers of the Week
       </h2>
       <div class="books">
-        <div class="books__card">
-          <div class="beautyfier"></div>
-          <img src="/assets/icons/covers/addy-osmani.jpg" alt="" class="books__img">
-          <div class="books__info">
-            <div class="books__main-info">
-              <h3 class="books__h3">
-                Addy Osmani
-              </h3>
-              <h2 class="books__h2">
-                Learning JavaScript Design Patterns
-              </h2>
-              <span class="books__price">
-                32$
-              </span>
-            </div>
-            <div class="books__buttons">
-              <button class="add__wishlist">Whishlist</button>
-              <button class="show-more">Show More</button>
-              <div class="add__cart">
-                <img src="/assets/icons/cart.png" alt="">
-              </div>
-            </div>
-          </div>
-
-          <div class="modal">
-            <div class="modal__main">
-              <h2 class="modal__title">
-                Secrets of the JavaScript Ninja
-              </h2>
-              <h3 class="modal__text">
-                With Learning JavaScript Design Patterns, you’ll learn how to write beautiful, structured, and maintainable JavaScript by applying classical and modern design patterns to the language. If you want to keep your code efficient, more manageable, and up-to-date with the latest best practices, this book is for you.
-              </h3>
-              <button class="modal__close">&#10006;</button>
-            </div>
-          </div>
-        </div>
       </div>
       <div class="subscribe">
         <div class="subscribe__text">
@@ -113,7 +85,7 @@
             Sign up for our Newsletter
           </h2>
           <h3 class="subscribe__h3">
-            <img src="/assets/icons/mail.png" alt="" class="subscribe__pic">
+            <img src="assets/icons/mail.png" alt="" class="subscribe__pic">
             Subscribe to the newsletter and be always up to date with new products, promotions and news!
           </h3>
         </div>
@@ -146,26 +118,26 @@
         <ul class="social">
           <li class="social__item">
             <a href="" class="social__link">
-              <img src="/assets/icons/telegram.png" alt="">
+              <img src="assets/icons/telegram.png" alt="">
             </a>
           </li>
           <li class="social__item">
             <a href="" class="social__link">
-              <img src="/assets/icons/whatsapp.png" alt="">
+              <img src="assets/icons/whatsapp.png" alt="">
             </a>
           </li>
           <li class="social__item">
             <a href="" class="social__link">
-              <img src="/assets/icons/inst.png" alt="">
+              <img src="assets/icons/inst.png" alt="">
             </a>
           </li>
         </ul>
 
         <ul class="pay-systems">
-          <li class="pay-systems__item"><img src="/assets/icons/pay/visa.png" alt=""></li>
-          <li class="pay-systems__item"><img src="/assets/icons/pay/master.png" alt=""></li>
-          <li class="pay-systems__item"><img src="/assets/icons/pay/apple.png" alt=""></li>
-          <li class="pay-systems__item"><img src="/assets/icons/pay/gpay.png" alt=""></li>
+          <li class="pay-systems__item"><img src="assets/icons/pay/visa.png" alt=""></li>
+          <li class="pay-systems__item"><img src="assets/icons/pay/master.png" alt=""></li>
+          <li class="pay-systems__item"><img src="assets/icons/pay/apple.png" alt=""></li>
+          <li class="pay-systems__item"><img src="assets/icons/pay/gpay.png" alt=""></li>
         </ul>
       </div>
     </div>
