@@ -67,6 +67,7 @@ async function render() {
         totalSpan.innerHTML = cartTotal;
         target.closest('.cart__card').remove();
         cartCounter.innerHTML--;
+        if (Number.parseInt(cartCounter.innerHTML) < 0) cartCounter.innerHTML = 0;
       }
       const deleteButtons = document.querySelectorAll('.cart__card_close');
       deleteButtons.forEach(item => {
@@ -137,7 +138,7 @@ async function render() {
   });
 
   //CART
-  const cart = document.querySelector('.cart-modal__main'),
+  const cart = document.querySelector('.cart-modal__content'),
         cartButtons = document.querySelectorAll('.add__cart'),
         cartCounter = document.querySelector('.counter__span');
   let cartSet = new Set();
