@@ -44,17 +44,15 @@ async function render() {
     opacity: 0;
     transition: opacity 300ms ease-in-out;
     `;
-    const leftX = 1459,
-          rightX = 1682,
-          bottomY = 276,
-          upperY = 127;
+    const bottomY = 200,
+          upperY = 0;
     const dragend = (event) => {
       let target = event.target.parentElement;
       modalElem.style.opacity = 0;
       setTimeout(() => {
         modalElem.style.visibility = 'hidden';
       },300);
-      if (event.clientX >= leftX && event.clientX <= rightX && event.clientY >= upperY && event.clientY <= bottomY) {
+      if (event.clientY >= upperY && event.clientY <= bottomY) {
         cartCounter.innerHTML++;
         if (cartSet.has(Number.parseInt((target.classList)[1]))) {
           cartCounter.innerHTML--;
