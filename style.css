@@ -350,6 +350,35 @@ h1 {
   color: red;
 }
 
+.grab {
+  cursor: move;
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+}
+
+.grab:active {
+  cursor: grabbing;
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing;
+}
+
+.drag-modal {
+  display: none;
+  position: absolute;
+  background-color: #E5E5E5;
+  border-radius: 10px;
+  border: 2px dashed #1ABC9C;
+  width: 224px;
+  height: 150px;
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+  color: #1ABC9C;
+  font-size: 40px;
+  cursor: grab;
+}
+
 .cart-modal__main {
   position: relative;
   background-color: azure;

@@ -35,6 +35,71 @@ async function render() {
     modalElem.addEventListener('click', closeModal);
   }
 
+  const modalForDrag = () => {
+    const modalElem = document.querySelector('.drag-modal');
+    const booksImgs = document.querySelectorAll('.books__img');
+    modalElem.style.cssText = `
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+    `;
+    const leftX = 1459,
+          rightX = 1682,
+          bottomY = 276,
+          upperY = 127;
+    const dragend = (event) => {
+      let target = event.target.parentElement;
+      modalElem.style.opacity = 0;
+      setTimeout(() => {
+        modalElem.style.visibility = 'hidden';
+      },300);
+      if (event.clientX >= leftX && event.clientX <= rightX && event.clientY >= upperY && event.clientY <= bottomY) {
+        cartCounter.innerHTML++;
+        if (cartSet.has(Number.parseInt((target.classList)[1]))) {
+          cartCounter.innerHTML--;
+        } else {
+          let tmp = Number.parseInt((target.classList)[1]);
+          cartSet.add(tmp);
+          let item = document.createElement('div');
+          item.classList.add('cart__card');
+          let element = booksData[tmp];
+          item.innerHTML = `
+          <img src="${element.imageLink}" alt="" class="cart__card_img">
+          <div class="books__info">
+            <div class="books__main-info">
+              <h3 class="books__h3">
+                ${element.author}
+              </h3>
+              <h2 class="books__h2">
+                ${element.title}
+              </h2>
+              <span class="books__price">
+                ${element.price}$
+              </span>
+            </div>
+          </div>
+          <button class="cart__card_close">&#10006;</button>
+          `;
+          item.classList.add(`${tmp}cart__card`);
+          cart.append(item);
+          cartTotal += element.price;
+          totalSpan.innerHTML = cartTotal;
+        }
+      }
+    }
+
+    const openModal = () => {
+      modalElem.style.visibility = 'visible';
+      modalElem.style.opacity = 1;
+    }
+
+    booksImgs.forEach(item => {
+      item.addEventListener('dragstart', openModal);
+      item.addEventListener('dragend', dragend);
+    });
+  }
+
   const modalControllerForCart = ({modal, btnOpen, btnClose}) => {
     const buttonShow = document.querySelectorAll(btnOpen);
     const modalElem = document.querySelector(modal);
@@ -84,9 +149,10 @@ async function render() {
   booksData.forEach((element, index) => {
   let card = document.createElement('div');
   card.classList.add('books__card');
+  card.classList.add(`${index}books__card`);
   card.innerHTML = `
   <div class="beautyfier"></div>
-  <img src="${element.imageLink}" alt="" class="books__img">
+  <img src="${element.imageLink}" alt="" class="books__img" draggable="true">
   <div class="books__info">
     <div class="books__main-info">
       <h3 class="books__h3">
@@ -181,27 +247,11 @@ async function render() {
   cartButtons.forEach(item => {
     item.addEventListener('click', addToCart);
   });
-  
-  //DRAG-N-DROP
-  const dragStart = (event) => {
-    event.dataTransfer.effectAllowed = "copyMove";
-    let target = event.target;
-    console.log(target);
-  }
 
-  const dragEnd = (event) => {
-    let target = event.target;
-    console.log(target);
-  }
-  const dragImgs = document.querySelectorAll('.books__img');
-  dragImgs.forEach(item => {
-    item.addEventListener('dragstart', dragStart);
-    item.addEventListener('dragend', dragEnd);
-  });
+  modalForDrag();
 }
 
 render();
-console.log('test github');
 
 
 
