@@ -93,3 +93,18 @@ function validate() {
   }
 }
 validate();
+
+function dater() {
+  let date = new Date();
+  let year = date.getFullYear();
+  let month = date.getMonth();
+  month++;
+  let day = date.getDate();
+  day++;
+  let str = `${year}-${month}-${day}`;
+  const dateInput = document.getElementById("delivery");
+  dateInput.setAttribute("min", `${year}-${month}-${day}`);
+  console.log(dateInput);
+}
+
+dater();
