@@ -5,21 +5,41 @@ const houseNumber = document.querySelector('.house-input');
 const flatNumber = document.querySelector('.flat-input');
 
 nameInput.addEventListener('input', () => {
-  console.log(nameInput.checkValidity());
+  if (!nameInput.checkValidity()) {
+    nameInput.classList.add('red');
+  } else {
+    nameInput.classList.remove('red');
+  }
 });
 
 surnameInput.addEventListener('input', () => {
-  console.log(surnameInput.checkValidity())
+  if (!surnameInput.checkValidity()) {
+    surnameInput.classList.add('red');
+  } else {
+    surnameInput.classList.remove('red');
+  }
 });
 
 streetInput.addEventListener('input', () => {
-  console.log(streetInput.checkValidity());
+  if (!streetInput.checkValidity()) {
+    streetInput.classList.add('red');
+  } else {
+    streetInput.classList.remove('red');
+  }
 });
 
 houseNumber.addEventListener('input', () => {
-  console.log(houseNumber.checkValidity());
+  if (!houseNumber.checkValidity()) {
+    houseNumber.classList.add('red');
+  } else {
+    houseNumber.classList.remove('red');
+  }
 });
 
 flatNumber.addEventListener('input', () => {
-  console.log(flatNumber.checkValidity());
+  if (!flatNumber.checkValidity()) {
+    flatNumber.classList.add('red');
+  } else {
+    flatNumber.classList.remove('red');
+  }
 });
