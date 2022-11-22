@@ -4,9 +4,50 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/assets/icons/bookshelf_icon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/normalize.css">
+  <link rel="stylesheet" href="style.css">
   <title>Order page</title>
 </head>
 <body>
-  
+  <div class="container">
+    <form action="" class="main-form">
+      <label for="name">Name: </label>
+      <input type="text" name="" id="name" class="name-input"
+        pattern="[a-zA-z]{4,}" required
+      >
+      <label for="surname">Surname: </label>
+      <input type="text" name="" id="surname" class="surname-input"
+        pattern="[a-zA-z]{5,}" required
+      >
+      <label for="delivery">Delivery date: </label>
+      <input type="date" id="delivery" required
+      >
+      <label for="street">Street: </label>
+      <input type="text" id="street" class="street-input"
+        pattern="[\w\d\s,./]{5,}" required
+      >
+      <label for="house">House number: </label>
+      <input type="text"  id="house" class="house-input"
+        pattern="[\d]{1,}" required
+      >
+      <label for="flat">Flat number: </label>
+      <input type="text" class="flat-input"
+      pattern="^[1-9]+[\d-]*$" id="flat" required
+      >
+      <form class="method">
+        <input type="radio" name="method" value="cash" class="method__radio" id="cash">
+        <label class="method__label" for="cash">Cash</label>
+        <input type="radio" name="method" value="card" class="method__radio" id="card" checked>
+        <label class="method__label" for="card">Card</label>
+      </form>
+      <input type="Submit" value="Complete" class="complete-button">
+    </form>
+  </div>
+  <script src="form-validator.js"></script>
 </body>
 </html>
