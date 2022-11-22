@@ -61,6 +61,16 @@ input {
 }
 
 .method {
+  width: 200px;
   display: flex;
   flex-direction: row;
+}
+
+.method input {
+  display: inline-block;
+}
+
+span {
+  display: block;
+  color: red;
 }
