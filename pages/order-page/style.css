@@ -36,11 +36,11 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 30px;
 }
 
 input {
   outline: none;
-  display: block;
 }
 
 .complete-button {
@@ -66,11 +66,15 @@ input {
   flex-direction: row;
 }
 
-.method input {
-  display: inline-block;
+#card {
+  margin-left: 20px;
 }
 
 span {
-  display: block;
+  opacity: 0;
   color: red;
+}
+
+.opacity {
+  opacity: 1;
 }

@@ -15,39 +15,58 @@
 </head>
 <body>
   <div class="container">
-    <form action="" class="main-form">
+    <div>
       <label for="name">Name: </label>
       <input type="text" name="" id="name" class="name-input"
         pattern="[a-zA-z]{4,}" required
       >
       <span class="name-span">The field is invalid</span>
+    </div>
+    <div>
       <label for="surname">Surname: </label>
       <input type="text" name="" id="surname" class="surname-input"
         pattern="[a-zA-z]{5,}" required
       >
+      <span class="surname-span">The field is invalid</span>
+    </div>
+    <div>
       <label for="delivery">Delivery date: </label>
       <input type="date" id="delivery" required
       >
+      <span class="delivery-span">The field is invalid</span>
+    </div>
+    <div>
       <label for="street">Street: </label>
       <input type="text" id="street" class="street-input"
         pattern="[\w\d\s,./]{5,}" required
       >
+      <span class="street-span">The field is invalid</span>
+    </div>
+    <div>
       <label for="house">House number: </label>
       <input type="text"  id="house" class="house-input"
         pattern="[\d]{1,}" required
       >
+      <span class="house-span">The field is invalid</span>
+    </div>
+    <div>
       <label for="flat">Flat number: </label>
       <input type="text" class="flat-input"
       pattern="^[1-9]+[\d-]*$" id="flat" required
       >
+      <span class="flat-span">The field is invalid</span>
+    </div>
+    <div>
       <form class="method">
         <input type="radio" name="method" value="cash" class="method__radio" id="cash">
         <label class="method__label" for="cash">Cash</label>
         <input type="radio" name="method" value="card" class="method__radio" id="card" checked>
         <label class="method__label" for="card">Card</label>
       </form>
-      <input type="Submit" value="Complete" class="complete-button">
-    </form>
+    </div>
+    <div>
+      <button>Complete</button>
+    </div>
   </div>
   <script src="form-validator.js"></script>
 </body>
